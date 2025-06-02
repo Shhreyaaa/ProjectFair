@@ -57,14 +57,14 @@ function Projects() {
   return (
     <>
     <div style={{padding:'40px', display:'flex', justifyContent:'space-between'}}>
-    <h2 style={{color:'rgb(150, 81, 2)'}}>All Projects</h2>
+    <h2 style={{color:'#1F2937'}}>All Projects</h2>
     <Form inline style={{width:'300px'}} >        
      <Form.Control onChange={(e)=>setSearchKey(e.target.value)} style={{height:'50px', borderRadius:'4px'}} type="text" placeholder="Search project by language" className=""  />
     </Form>
 
     </div>
 
-   <div className='row' style={{padding:'30px'}}>
+   <div className=' row' style={{paddingLeft:'100px',paddingTop:'50px'}}>
    {allProjects?.length>0?
     allProjects.map(projects=>(
     <div className='col-lg-3 mb-4'>

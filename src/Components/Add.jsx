@@ -98,7 +98,7 @@ function Add() {
   
   return (
     <>
-    <button onClick={handleShow} style={{border:'none', backgroundColor:'rgb(150, 81, 2)',borderRadius:'2px',height:'30px',width:'120px'}}><i class="fa-solid fa-plus"></i> New Project</button>
+    <button onClick={handleShow} style={{border:'none', backgroundColor:'#93B874',borderRadius:'2px',height:'30px',width:'120px',color:'black'}}><i class="fa-solid fa-plus"></i> New Project</button>
 
     <Modal
         show={show}
@@ -108,7 +108,7 @@ function Add() {
         size='lg'
       >
         <Modal.Header closeButton>
-          <Modal.Title style={{color:'rgb(150, 81, 2)',fontWeight:'bold'}}>New Project Details</Modal.Title>
+          <Modal.Title style={{color:'#1F2937',fontWeight:'bold'}}>New Project Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div className='row p-3'>
@@ -121,20 +121,20 @@ function Add() {
             
           </div>
           <div className='col-lg-8'>
-            <input onChange={e=>setProjectDetails({...projectDetails,title:e.target.value})} className='w-100 p-2 mb-2 mt-2' style={{height:'50px', border:'none', borderRadius:'4px'}} type="text" placeholder='Project Title' />
-            <input onChange={e=>setProjectDetails({...projectDetails,languages:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'none', borderRadius:'4px'}} type="text" placeholder='Languages Used' />
-            <input onChange={e=>setProjectDetails({...projectDetails,github:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'none', borderRadius:'4px'}} type="text" placeholder='Project Github Link' />
-            <input onChange={e=>setProjectDetails({...projectDetails,website:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'none', borderRadius:'4px'}} type="text" placeholder='Project Website Link' />
+            <input onChange={e=>setProjectDetails({...projectDetails,title:e.target.value})} className='w-100 p-2 mb-2 mt-2' style={{height:'50px', border:'1px solid black', borderRadius:'4px'}} type="text" placeholder='Project Title' />
+            <input onChange={e=>setProjectDetails({...projectDetails,languages:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'1px solid black', borderRadius:'4px'}} type="text" placeholder='Languages Used' />
+            <input onChange={e=>setProjectDetails({...projectDetails,github:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'1px solid black', borderRadius:'4px'}} type="text" placeholder='Project Github Link' />
+            <input onChange={e=>setProjectDetails({...projectDetails,website:e.target.value})} className='w-100 p-2 mb-2' style={{height:'50px', border:'1px solid black', borderRadius:'4px'}} type="text" placeholder='Project Website Link' />
           </div>
           
-          <input onChange={e=>setProjectDetails({...projectDetails,overview:e.target.value})} className=' p-2 mt-3' style={{width:'747px',height:'50px', border:'none', borderRadius:'4px'}} type="text" placeholder='Project Overview' />
+          <input onChange={e=>setProjectDetails({...projectDetails,overview:e.target.value})} className=' p-2 mt-3' style={{width:'747px',height:'50px', border:'1px solid black', borderRadius:'4px'}} type="text" placeholder='Project Overview' />
         </div>
         </Modal.Body>
         <Modal.Footer>
           <Button style={{borderRadius:'5px'}} variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button onClick={handleAddProject} style={{borderRadius:'5px'}} variant="primary">Add</Button>
+          <Button onClick={handleAddProject} style={{borderRadius:'5px',background:'#93B874'}} variant="">Add</Button>
         </Modal.Footer>
       </Modal>
     </>

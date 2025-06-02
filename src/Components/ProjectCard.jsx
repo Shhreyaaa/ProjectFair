@@ -13,15 +13,13 @@ function ProjectCard({displayData}) {
     const handleShow = () => setShow(true);
   return (
     <>
-    <Card style={{ width: '15rem' }} onClick={handleShow}>
-      <Card.Img variant="top" src={`${SERVER_URL}/uploads/${displayData.projectImg}`} alt="" style={{height:'250px',width:'238px'}} />
+    <Card style={{ width: '19rem' }} onClick={handleShow}>
+      <Card.Img variant="top" src={`${SERVER_URL}/uploads/${displayData.projectImg}`} alt={displayData.title} style={{height:'250px',width:'19rem'}} />
       <Card.Body>
         <Card.Title style={{textAlign:'center'}}>{displayData?.title}</Card.Title>
                 
       </Card.Body>
     </Card>
-
-    
 
       <Modal size='lg' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -30,7 +28,7 @@ function ProjectCard({displayData}) {
         <Modal.Body>
             <div className='row'>
                 <div className='col-lg-6'>
-                    <img src={`${SERVER_URL}/uploads/${displayData.projectImg}`} className='w-100' alt="" />
+                    <img src={`${SERVER_URL}/uploads/${displayData.projectImg}`} className='w-100' alt={displayData.title} />
                 </div>
 
                 <div className='col-lg-6'>

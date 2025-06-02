@@ -127,7 +127,7 @@ EXPRESS -Node js framework
    -create .env file
    -create .gitignore file
    -create index.js file to define express server
-   -import dotenv cos express at index.js
+   -import dotenv cors express at index.js
    -create server using express
    -use cors in express server
    -use json parser in express server
@@ -159,11 +159,14 @@ mongoose
 - can maintain/define structure
 - install ------------  npm i mongoose
 
+Frontend: install axios, create common request config, store base_url to a variable, create api 
+
 
 
 
 JSON WEBTOKEN-JWT
 --------------------
+npm i jsonwebtoken
 -library used for authentication in client server request
 -used to securely transfer information over the web
 -generate token if login success

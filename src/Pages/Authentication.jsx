@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import register from '../assets/register.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { loginApi, registerApi } from '../../services/allApi'
 import { toast } from 'react-toastify'
 import Spinner from 'react-bootstrap/Spinner';
 import { tokenAuthContext } from '../context/ContextApi'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -24,7 +26,7 @@ function Authentication({insideRegister}) {
       // api call
       try { 
         const result= await registerApi(userData)
-        console.log(result);
+        // console.log(result);
       
       if(result.status==200){
         navigate('/login')
@@ -88,26 +90,29 @@ function Authentication({insideRegister}) {
       toast.warning('please fill the form completely')
     }
   }
+    useEffect(() => {
+    AOS.init({ duration: 1000, once: true })
+  }, [])
   return (
     <>
 <div className='d-flex justify-content-center mt-5 mb-5' style={{flexWrap:'wrap'}}>
-<div className='row' style={{width:'950px',height:'500px',backgroundColor:'rgba(38, 57, 81, 0.56)',borderRadius:'5px' }}>
+<div className='row' style={{width:'950px',height:'500px',backgroundColor:'#F3F7F0',borderRadius:'30px 0px'}}>
       <div className='col-lg-6'>
-        <img src={register} alt="" style={{height:'500px',width:'500px'}}/>
+        <img data-aos="zoom-in-right" src={register} alt="" style={{height:'500px',width:'500px'}}/>
 
       </div>
       <div className='col-lg-6 p-5'>
-      <h1 style={{fontWeight:'bold', color:'rgb(249, 135, 5)'}}>Project Fair</h1>
-      <h6 className='mb-4' style={{fontWeight:'bold'}}>Sign Up to your account</h6>
+      <h1 style={{fontWeight:'bold', color:'#444f45'}}>Project Fair</h1>
+      <h6 className='mb-4' style={{fontWeight:'bold', color:'#444f45'}}>Sign Up to your account</h6>
       {insideRegister&&
       <input onChange={e=>setUserData({...userData,username:e.target.value})} value={userData.username} style={{width:'350px',height:'50px', padding:'10px', marginBottom:'20px'}} placeholder='Username' type="text" />}
       <input onChange={e=>setUserData({...userData,email:e.target.value})} value={userData.email} style={{width:'350px',height:'50px', padding:'10px', marginBottom:'20px'}} placeholder='Email address' type="text" />
       <input onChange={e=>setUserData({...userData,password:e.target.value})} value={userData.password} style={{width:'350px',height:'50px', padding:'10px', marginBottom:'20px'}} placeholder='Password' type="text" />
 
       {insideRegister?
-      <button onClick={handleRegister} style={{width:'350px',height:'40px',border:'none', borderRadius:'5px',backgroundColor:'rgb(249, 135, 5)',fontWeight:'bold'}}>Sign Up</button>
+      <button onClick={handleRegister} style={{width:'350px',height:'40px',border:'none', borderRadius:'5px',backgroundColor:'#93B874',fontWeight:'bold', color:'#444f45'}}>Sign Up</button>
       :
-      <button onClick={handleLogin} style={{width:'350px',height:'40px',border:'none', borderRadius:'5px',backgroundColor:'rgb(249, 135, 5)',fontWeight:'bold'}}>Sign In {isloggedIn &&
+      <button onClick={handleLogin} style={{width:'350px',height:'40px',border:'none', borderRadius:'5px',backgroundColor:'#93B874',fontWeight:'bold', color:'#444f45'}}>Sign In {isloggedIn &&
         <Spinner animation="border" size="sm" variant="light" />
         }</button>
       }

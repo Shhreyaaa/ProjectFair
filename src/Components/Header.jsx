@@ -17,12 +17,12 @@ function Header() {
   }
   return (
     <>
-    <Navbar className="" style={{backgroundColor:'rgb(150, 81, 2)'}}>
+    <Navbar className="" style={{backgroundColor:'#93b874',height:'80px'}} expand="lg">
         <Container>
-        <Link style={{textDecoration:'none'}} to={'/'}><Navbar.Brand href="#home" style={{fontWeight:'bold'}}><i class="fa-brands fa-docker"></i>
+        <Link style={{textDecoration:'none'}} to={'/'}><Navbar.Brand href="#home" style={{fontWeight:'bold',fontSize:'25px'}}><i class="fa-solid fa-biohazard"></i>
             PROJECT FAIR
           </Navbar.Brand></Link>
-          <button onClick={logOut} className='' style={{border:'none', fontWeight:'bold',backgroundColor:'rgb(150, 81, 2)'}} >LogOut</button>
+          <button onClick={logOut} className='' style={{border:'none', fontWeight:'bold',background:'none',fontSize:'20px'}} >Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
         </Container>
         
       </Navbar>

@@ -62,14 +62,14 @@ function View() {
   }
   return (
     <>
-    <div className='d-flex justify-content-between p-1 mb-4'>
+    <div className='d-flex justify-content-between p-1 mb-4' style={{marginTop:'100px'}}>
       <div className='' style={{fontWeight:'bold',fontSize:'larger'}}>All Projects</div>
       <div><Add/></div>
     </div>
 
    { userProjects?.length>0?
     userProjects?.map(projects=>(
-    <div className='w-100 d-flex align-items-center justify-content-between mb-2 p-3' style={{height:'60px',border:'2px solid white', borderRadius:'5px'}}>
+    <div className='w-100 d-flex align-items-center justify-content-between mb-2 p-3' style={{height:'60px',border:'2px solid black', borderRadius:'5px'}}>
     
     <div><h5 >{projects?.title}</h5></div>
     <div className='d-flex' style={{justifyContent:'space-around'}}>
